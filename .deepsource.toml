@@ -11,3 +11,6 @@ name = "java"
 
 [[analyzers]]
 name = "test-coverage"
+
+[[transformers]]
+name = "google-java-format"
