@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EnumHelperTest {
     @Test
-    public void test_get_enum_name_with_name_annotation() {
+    void test_get_enum_name_with_name_annotation() {
         enum TestEnum {
             @Name("Test Name")
             VALUE1,
@@ -18,7 +18,7 @@ class EnumHelperTest {
     }
 
     @Test
-    public void test_returns_value_of_name_annotation_if_present() {
+    void test_returns_value_of_name_annotation_if_present() {
         enum TestEnum {
             @Name("Test Name")
             VALUE1,
@@ -30,7 +30,7 @@ class EnumHelperTest {
     }
 
     @Test
-    public void test_returns_enum_name_if_annotation_not_present() {
+    void test_returns_enum_name_if_annotation_not_present() {
         // Create a simple enum without Name annotation
         enum TestEnum {
             VALUE1,
@@ -43,13 +43,13 @@ class EnumHelperTest {
     }
 
     @Test
-    public void test_get_enum_name_with_null_value() {
+    void test_get_enum_name_with_null_value() {
         String result = EnumHelper.getEnumName(null);
         assertNull(result);
     }
 
     @Test
-    public void test_retrieve_enum_name_invalid_field() {
+    void test_retrieve_enum_name_invalid_field() {
         // Create a dummy enum class for testing
         enum DummyEnum {
             VALUE1,
