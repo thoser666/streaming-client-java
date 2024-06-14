@@ -32,19 +32,5 @@ public class HttpRateLimitedRestRequestException extends HttpRestRequestExceptio
     }
 }
 
-class HttpRestRequestException extends Exception {
-    private HttpResponse<?> response;
 
-    public HttpRestRequestException(HttpResponse<?> response) {
-        super("HTTP Request failed with status code: " + response.statusCode());
-        this.response = response;
-    }
 
-    public HttpResponse<?> getResponse() {
-        return response;
-    }
-}
-
-class HttpRequestRateLimits {
-    public static final String MIXER_RATE_LIMIT_RESET_HEADER = "Mixer-Rate-Limit-Reset";
-}
