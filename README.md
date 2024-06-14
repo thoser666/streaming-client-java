@@ -1,1 +1,1 @@
-Javarebuild of https://github.com/SaviorXTanren/StreamingClientLibrary.git
+Javareplica of https://github.com/SaviorXTanren/StreamingClientLibrary.git
