@@ -13,12 +13,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HttpRateLimitedRestRequestExceptionTest {
 
-    @Test
-    void test_constructor_initializes_rateLimitBucket_from_response_header() {
-        HttpResponse<?> response = mock(HttpResponse.class);
-        HttpHeaders headers = mock(HttpHeaders.class);
-        when(response.headers()).thenReturn(headers);
-        when(headers.firstValue(HttpRequestRateLimits.MIXER_RATE_LIMIT_RESET_HEADER)).thenReturn(Optional.of("12345"));
+  @Test
+  void test_constructor_initializes_rateLimitBucket_from_response_header() {
+    HttpResponse<?> response = mock(HttpResponse.class);
+    HttpHeaders headers = mock(HttpHeaders.class);
+    when(response.headers()).thenReturn(headers);
+    when(headers.firstValue(HttpRequestRateLimits.MIXER_RATE_LIMIT_RESET_HEADER))
+        .thenReturn(Optional.of("12345"));
 
         HttpRateLimitedRestRequestException exception = new HttpRateLimitedRestRequestException(response);
 
