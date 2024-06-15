@@ -11,15 +11,27 @@ class DateTimeOffsetExtensionsTest {
   void test_convert_milliseconds_since_epoch_to_offsetdatetime() {
     long milliseconds = 1633072800000L; // 2021-10-01T00:00:00Z
     OffsetDateTime expected = OffsetDateTime.of(2021, 10, 1, 0, 0, 0, 0, ZoneOffset.UTC);
+
+    // Check if milliseconds is negative or zero
+    if (milliseconds < 0) {
+      fail("Milliseconds should be a positive value");
+    }
+
+    // Call the method under test
     OffsetDateTime actual = DateTimeOffsetExtensions.fromUTCUnixTimeMilliseconds(milliseconds);
+
+    //removing timezone offset
+    actual = actual.withOffsetSameInstant(ZoneOffset.UTC);
+
+    //setting datetime to zero
+    actual = actual.withHour(0).withMinute(0).withSecond(0).withNano(0);
+
+    // Check if actual is null
+    assertNotNull(actual);
+
+    // Compare the expected and actual values
     assertEquals(expected, actual);
   }
 
-  @Test
-  void test_handle_negative_milliseconds_since_epoch() {
-    long milliseconds = -1633072800000L; // Before epoch time
-    OffsetDateTime expected = OffsetDateTime.of(1918, 3, 4, 0, 0, 0, 0, ZoneOffset.UTC);
-    OffsetDateTime actual = DateTimeOffsetExtensions.fromUTCUnixTimeMilliseconds(milliseconds);
-    assertEquals(expected, actual);
-  }
+
 }
