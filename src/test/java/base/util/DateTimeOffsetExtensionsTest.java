@@ -20,10 +20,10 @@ class DateTimeOffsetExtensionsTest {
     // Call the method under test
     OffsetDateTime actual = DateTimeOffsetExtensions.fromUTCUnixTimeMilliseconds(milliseconds);
 
-    //removing timezone offset
+    // removing timezone offset
     actual = actual.withOffsetSameInstant(ZoneOffset.UTC);
 
-    //setting datetime to zero
+    // setting datetime to zero
     actual = actual.withHour(0).withMinute(0).withSecond(0).withNano(0);
 
     // Check if actual is null
@@ -32,6 +32,4 @@ class DateTimeOffsetExtensionsTest {
     // Compare the expected and actual values
     assertEquals(expected, actual);
   }
-
-
 }
