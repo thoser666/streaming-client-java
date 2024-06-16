@@ -25,13 +25,5 @@ class HttpRateLimitedRestRequestExceptionTest {
     assertEquals("12345", exception.getRateLimitBucket());
   }
 
-  //    @Test
-  //    public void test_set_rate_limit_bucket_with_valid_string() {
-  //        HttpResponse<?> response = mock(HttpResponse.class);
-  //        HttpRateLimitedRestRequestException exception = new
-  // HttpRateLimitedRestRequestException(response);
-  //        String validBucket = "validBucket";
-  //        exception.setRateLimitBucket(validBucket);
-  //        assertEquals(validBucket, exception.getRateLimitBucket());
-  //    }
+
 }
