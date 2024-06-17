@@ -24,7 +24,7 @@ public class HttpRestRequestException extends IOException {
         this.response = response;
     }
 
-    public HttpResponse<?> getResponse() {
+    public HttpResponse getResponse() {
         return response;
     }
 
