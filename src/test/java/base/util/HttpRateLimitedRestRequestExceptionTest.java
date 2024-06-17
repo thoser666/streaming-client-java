@@ -24,6 +24,4 @@ class HttpRateLimitedRestRequestExceptionTest {
 
     assertEquals("12345", exception.getRateLimitBucket());
   }
-
-
 }
